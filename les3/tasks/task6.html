@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Завдання 6
+	</h1>
+	<p>З клавіатури вводиться номер дня тижня. Вивести на екран назву дня.
+	</p>
+	<script>
+		//Введення даних
+		let weekDay = parseInt(prompt('Вкажіть номер дня тижня'));
+		let dayName;
+		//Обчислення
+		switch (weekDay) {
+			case 1: dayName = 'Понеділок'
+				break;
+			case 2: dayName = 'Вівторок'
+				break;
+			case 3: dayName = 'Середа'
+				break;
+			case 4: dayName = 'Четвер'
+				break;
+			case 5: dayName = 'Пʼятниця'
+				break;
+			case 6: dayName = 'Субота'
+				break;
+			case 7: dayName = 'Неділя'
+				break;
+			default:
+				dayName = 'Такого дня не існує'
+		}
+		//Виведення
+		alert(dayName)
+
+	</script>
+</body>
+
+</html>

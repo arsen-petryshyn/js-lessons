@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Завдання 5
+	</h1>
+	<p>З клавіатури вводиться назва категорії водія (А-мотоцикл, В-легковий автомобіль, С-вантажний автомобіль). Вивести
+		на екран назву транспортного засобу, яким він може керувати.
+	</p>
+	<script>
+		let driverCategory = prompt("Вкажіть вашу категорію прав A,B,C");
+		let category;
+		switch (driverCategory) {
+			case 'A':
+			case 'a':
+				category = 'Дозволено керувати мотоциклом'
+				break;
+			case 'B':
+			case 'b':
+				category = 'Дозволено керувати легковим автомобілем'
+				break;
+			case 'C':
+			case 'c':
+				category = 'Дозволено керувати вантажним автомобілем'
+				break;
+			default:
+				category = 'Такої категорії не існує'
+		}
+		alert(category)
+
+	</script>
+</body>
+
+</html>

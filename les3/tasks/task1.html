@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Завдання 1
+	</h1>
+	<p>З клавіатури вводяться імена двох дітей та кількість у них цукерок. Вивести не екран ім’я тієї дитини, у якої
+		кількість цукерок є більшою, або вивести, що кількість однакова.</p>
+	<script>
+		//Введення даних
+
+		const CHILD_NAME1 = prompt("Перше імʼя");
+		const CHILD_CANDIS1 = parseInt(prompt("Скільки цукерок в першиї дитини", 0));
+		const CHILD_NAME2 = prompt("Друге імʼя");
+		const CHILD_CANDIS2 = parseInt(prompt("Скільки цукерок в другої дитини", 0));
+		let result = "однаково"
+		//Обчислення
+		// if (CHILD_CANDIS1 === CHILD_CANDIS2) {
+		// 	document.write(`Кількість цукерок ${result}`);
+		// } else if (CHILD_CANDIS1 > CHILD_CANDIS2) {
+		// 	document.write(`Кількість цукерок у ${CHILD_NAME1} є більшою`);
+		// } else {
+		// 	document.write(`Кількість цукерок у ${CHILD_NAME2} є більшою`);
+		// } 
+
+		if (CHILD_CANDIS1 === CHILD_CANDIS2) {
+			result = "Кількість цукерок однакова";
+		} else if (CHILD_CANDIS1 > CHILD_CANDIS2) {
+			result = `Кількість цукерок у ${CHILD_NAME1} є більшою`;
+		} else {
+			result = `Кількість цукерок у ${CHILD_NAME2} є більшою`;
+		}
+
+		//Виведення
+		document.write(`${result}`)
+
+	</script>
+</body>
+
+</html>
