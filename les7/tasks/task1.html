@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ДЗ цикли</title>
+</head>
+
+<body>
+	<h1>Завдання 1
+	</h1>
+	<p>Створити функцію, яка за номером місяця повертає його назву. </p>
+	<script>
+		function monthName(monthNum) {
+			switch (monthNum) {
+				case 1: return "Січень"
+				case 2: return "Лютий"
+				case 3: return "Березень"
+				case 4: return "Квітень"
+				case 5: return "Травень"
+				case 6: return "Червень"
+				case 7: return "Липень"
+				case 8: return "Серпень"
+				case 9: return "Вересень"
+				case 10: return "Жовтень"
+				case 11: return "Листопад"
+				case 12: return "Грудень"
+
+
+				default: return "Такого місяця не існує"
+			}
+		}
+		let userMonthNum = parseInt(prompt("Введіть будь-ласка номер місяця від 1 до 12"))
+		alert(monthName(userMonthNum))
+
+	</script>
+</body>
+
+</html>

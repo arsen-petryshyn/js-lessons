@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ДЗ цикли</title>
+</head>
+
+<body>
+	<h1>Завдання 2+
+	</h1>
+	<p>2. Відобразити трикутник за допомогою символів «о»</p>
+	<script>
+		// ВАРІАНТ - 1
+		// let rows = 7
+		// for (let i = 1; i <= rows; i++) {
+		// 	let row = '<br>';
+		// 	for (let j = 1; j <= i; j++) {
+		// 		row += 'o';
+		// 	}
+		// 	document.write(row);
+		// }
+		// -------------
+		// ВАРІАНТ - 2
+		let counter = 0
+		let row = ''
+		while (counter < 7) {
+			row += 'o'
+			counter++
+			document.write(`${row}<br>`)
+		}
+	</script>
+</body>
+
+</html>

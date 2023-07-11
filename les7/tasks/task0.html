@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ДЗ цикли</title>
+</head>
+
+<body>
+	<h1>Завдання 0
+	</h1>
+	<p>Створити функцію, яка за номером місяця повертає пору року, до якої відноситься цей місяць.
+	</p>
+	<script>
+		function season(monthNum) {
+			if (monthNum >= 1 && monthNum <= 12) {
+				if (monthNum = 12 || 1 || 2) {
+					return "Зима";
+				} else if (monthNum = 3 || 4 || 5) {
+					return "Весна";
+				} else if (monthNum = 6 || 7 || 8) {
+					return "Літо";
+				} else {
+					return "Осінь";
+				}
+			} else {
+				return "Не коректний номер місяця"
+			}
+		}
+		let userMonthNum = parseInt(prompt("Вкажіть номер місяця від 1 до 12"))
+		alert(ßseason(userMonthNum))
+
+
+
+	</script>
+</body>
+
+</html>

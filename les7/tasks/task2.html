@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ДЗ цикли</title>
+</head>
+
+<body>
+	<h1>Завдання 2
+	</h1>
+	<p>Створити функцію, яка за номером дня дозволяє з’ясувати чи є цей день робочим.
+	</p>
+	<script>
+		function dayNum(weekend) {
+			if (weekend >= 1 && weekend <= 31) {
+				if (
+					weekend == 5 ||
+					weekend == 6 ||
+					weekend == 12 ||
+					weekend == 13 ||
+					weekend == 19 ||
+					weekend == 20 ||
+					weekend == 26 ||
+					weekend == 27) {
+					return "Гарний день для пікніка";
+				} else {
+					return "Не час розслаблятись, це робочий день";
+				}
+
+			} else {
+				return "Не вірно вказана дата";
+			}
+		}
+		let userDay = parseInt(prompt("Які дні робочі в Серпні 2023?"));
+		alert(dayNum(userDay));
+
+	</script>
+</body>
+
+</html>

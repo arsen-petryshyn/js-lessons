@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ДЗ цикли</title>
+</head>
+
+<body>
+	<h1>Завдання 5
+	</h1>
+	<p>Інвестор вклав тис. грн на 20 років під 20% річних, а потім на 17 років під 27% річних. Визначити за допомогою
+		циклів суму, яку він одержить.
+	</p>
+	<script>
+		//Введення
+		let invest = parseInt(prompt('Скільки бажаєте інвистувати?'));
+		let years = 20;
+
+		//Обчислення
+		for (let i = 1; i <= 20; i++) {
+			invest += invest * 0.2;
+		}
+		for (let j = 1; j <= 17; j++) {
+			invest += invest * 0.27;
+		}
+		// do {
+		// 	invest += invest * 0.2;
+		// 	years++;
+		// } while (years <= 20);
+		//Виведення
+		document.write(`Інвестор отримає ${invest.toFixed(2)} гривень`);
+	</script>
+</body>
+
+</html>

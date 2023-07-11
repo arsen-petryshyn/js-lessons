@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ДЗ цикли</title>
+</head>
+
+<body>
+	<h1>Завдання 4.1
+	</h1>
+	<p>З клавіатури вводяться два числа N i M (N < M). Вивести а екран числа N---M N+1 --- M-1 N+2 --- M-2 N+3 --- M-3 .
+			. . . . . Виведення завершити коли число справа стане меншим за число зліва.</p>
+
+			<script>
+				let numberN = parseInt(prompt('Вкажіть число N '))
+				let numberM = parseInt(prompt('Вкажіть число M (воно має бути більшим за попереднє число)'))
+				do {
+					document.write(`${numberN} --- ${numberM} <br>`);
+					numberN++;
+					numberM--;
+				} while (numberM >= numberN);
+
+			</script>
+</body>
+
+</html>

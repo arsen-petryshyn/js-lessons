@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ДЗ цикли</title>
+</head>
+
+<body>
+	<h1>Завдання 3
+	</h1>
+	<p>З клавіатури вводиться початкове знчення суми. Поки сума є меншою за 100 додавати до неї числа, які вводяться з
+		клавіатури.
+	</p>
+	<script>
+		let input;
+		let inputSum = 0;
+		do {
+			input = parseInt(prompt(`Сума чисел ${inputSum}. Додайте число, сума має бути не більше 100`))
+			inputSum += input
+
+		} while (inputSum <= 100);
+
+		document.write(`Що ж ви накоїли, тепер сума ${inputSum} є більшою за 100`)
+
+	</script>
+</body>
+
+</html>

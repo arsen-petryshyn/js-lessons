@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ДЗ цикли</title>
+</head>
+
+<body>
+	<h1>Завдання 4
+	</h1>
+	<p>Створити функцію, яка для 3 заданих чисел знаходить одночасно декілька результатів: кількість парних, кількість
+		додатних, кількість більших за 100.
+	</p>
+	<script>
+
+
+		function numbersCounts(num1, num2, num3) {
+
+			let evenCount = 0;
+			let positiveCount = 0;
+			let greaterThan100Count = 0;
+
+			if (num1 % 2 === 0) {
+				evenCount++;
+			}
+			if (num2 % 2 === 0) {
+				evenCount++;
+			}
+			if (num3 % 2 === 0) {
+				evenCount++;
+			}
+
+			if (num1 > 0) {
+				positiveCount++;
+			}
+			if (num2 > 0) {
+				positiveCount++;
+			}
+			if (num3 > 0) {
+				positiveCount++;
+			}
+
+			if (num1 > 100) {
+				greaterThan100Count++;
+			}
+			if (num2 > 100) {
+				greaterThan100Count++;
+			}
+			if (num3 > 100) {
+				greaterThan100Count++;
+			}
+
+			return [evenCount, positiveCount, greaterThan100Count];
+		}
+
+		let num1 = parseInt(prompt("Введіть число 1"));
+		let num2 = parseInt(prompt("Введіть число 2"));
+		let num3 = parseInt(prompt("Введіть число 3"));
+		let results = numbersCounts(num1, num2, num3);
+
+		document.write(`Кількість парних = ${results[0]}<br>`);
+		document.write(`Кількість додатних = ${results[1]}<br>`);
+		document.write(`Кількість більших за 100 = ${results[2]}<br>`);
+
+
+
+	</script>
+</body>
+
+</html>

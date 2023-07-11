@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ДЗ цикли</title>
+</head>
+
+<body>
+	<h1>Завдання 1
+	</h1>
+	<p>З клавіатури вводитяться числа поки не буде введено 0. Знайти суму чисел.
+	</p>
+	<script>
+		//Введення даних
+		let userNumber;
+		let sum = 0
+		do {
+			userNumber = parseInt(prompt('Введіть число від: '));
+			sum += userNumber;
+
+		} while (userNumber !== 0);
+		//Виведення
+		document.write('Сима чисел:', sum);
+		console.log('Сима чисел:', sum);
+	</script>
+</body>
+
+</html>

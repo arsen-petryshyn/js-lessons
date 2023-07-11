@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ДЗ цикли</title>
+</head>
+
+<body>
+	<h1>Завдання 2
+	</h1>
+	<p>З клавіатури вводитяться числа поки не буде введено 0. Знайти добуток чисел.
+	</p>
+	<script>
+		//Введення даних
+		let userNumber;
+		let product = 1;
+		do {
+			userNumber = parseInt(prompt('Введіть будь яке число число, але тільки не 0: '));
+			if (userNumber > 0) {
+				product *= userNumber
+			}
+
+		} while (userNumber !== 0);
+		//Виведення
+		document.write('Я ж вас просив, добутук вказаних чисел:', product);
+	</script>
+</body>
+
+</html>

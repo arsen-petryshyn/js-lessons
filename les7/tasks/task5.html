@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ДЗ цикли</title>
+</head>
+
+<body>
+	<h1>Завдання 5
+	</h1>
+	<p>Створити окремі функції, які переводять:
+		Сантиметри у дюйми;
+		Кілограми у фунти;
+		Кілометри у милі.
+
+	</p>
+	<script>
+
+
+		function centimetersInches(centimeter) {
+			return centimeter / 2.54;
+		}
+		function kilogramsPounds(kilograms) {
+			return kilograms * 2.205;
+		}
+		function kilometersMiles(kilometers) {
+			return kilometers / 1.609;
+
+		}
+
+		let centimeter = parseFloat(prompt("Введіть сантиметри"));
+		let inches = centimetersInches(centimeter);
+		alert(`${centimeter.toFixed(2)} сантиметрів = ${inches.toFixed(2)} дюймів`);
+
+		let kilograms = parseFloat(prompt("Введіть кілограми"));
+		let pounds = kilogramsPounds(kilograms);
+		alert(`  ${kilograms.toFixed(2)} кілограм = ${pounds.toFixed(2)} фунтів`);
+
+		let kilometers = parseFloat(prompt("Введіть кілометри"));
+		let miles = kilometersMiles(kilometers);
+		alert(`  ${kilometers.toFixed(2)} кілометрів = ${miles.toFixed(2)} миль`);
+	</script>
+</body>
+
+</html>
