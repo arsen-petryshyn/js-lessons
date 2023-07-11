@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ДЗ цикли</title>
+</head>
+
+<body>
+	<h1>Задача 7.</h1>
+	<p>Вивести таблицю</p>
+	<script>
+		let userNumber = parseInt(prompt("Скільки вивести на екран абзаців ?", 1))
+
+		for (let headerNumber = 1; headerNumber <= userNumber; headerNumber++) {
+			document.write(`<h1>Заголовок ${headerNumber} </h1>`)
+			for (let paragraphNumber = 1; paragraphNumber <= headerNumber; paragraphNumber++) {
+				document.write(`<p>Розділ ${headerNumber}, параграф ${paragraphNumber} </p>`)
+
+			}
+		}
+	</script>
+</body>
+
+</html>

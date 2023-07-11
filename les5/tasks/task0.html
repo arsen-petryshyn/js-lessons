@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ДЗ цикли</title>
+</head>
+
+<body>
+	<div id="buttons-container"></div>
+	<h1>Завдання 0
+	</h1>
+	<p>Задача 0. Вивести на екран 8 кнопок з написом “Hello”.
+	</p>
+
+	<script>
+		for (let numButton = 1; numButton <= 8; numButton++) {
+			const button = document.createElement("button");
+			button.innerHTML = "Hello";
+			document.body.appendChild(button);
+
+		}
+	</script>
+</body>
+
+</html>

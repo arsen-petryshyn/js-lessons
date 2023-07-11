@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ДЗ цикли</title>
+</head>
+
+<body>
+	<h1>Завдання 1
+	</h1>
+	<p>Вивести з використанням циклів маркований список з випадковими числами (1-100). Кількість випадкових чисел
+		вводиться користувачем.
+	</p>
+	<script>
+		//Введення даних
+		let userNumber = parseInt(prompt("Кількість чисел", '1'));
+		//Обчислення
+		for (let number = 0; number < userNumber; number++) {
+			const randomNumber = Math.floor(Math.random() * 100 + 1)
+			const li = document.createElement('li');
+			li.innerHTML = `${randomNumber}`;
+			document.body.appendChild(li);
+
+		}
+
+		//Виведення
+
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ДЗ цикли</title>
+</head>
+
+<body>
+	<h1>Задача 9.</h1>
+	<p>Користувач загадує число. Комп’ютер задає питання поки не вгадає число користувача (використати confirm).</p>
+	<script>
+		let secretNumber = alert("Загадайте число від 1 до 10:");
+		let attemps = 0;
+		let quantity;
+		do {
+			let randomNumber = Math.floor(Math.random() * 10) + 1;
+			quantity = confirm(`Ваше число  ${randomNumber}?`);
+			attemps++;
+		} while (quantity == false)
+
+		document.write(`Я вгадав ваше число з ${attemps}разу`)
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ДЗ цикли</title>
+</head>
+
+<body>
+	<h1>Задача -2
+	</h1>
+	<p>Поступово генерувати 100 випадкових чисел від 1 до 1000. Підрахувати яких чисел більше: парних чи непарних.</p>
+	<script>
+
+		//Введення даних
+		let evenNumber = 0;
+		let oddNumber = 0;
+		//Обчислення
+		for (let numb100 = 0; numb100 <= 100; numb100++) {
+			const randomNumber = Math.floor(Math.random() * 1000) + 1;
+			console.log("Випадкове число", randomNumber);
+
+			if (randomNumber % 2 === 0) {
+				evenNumber++;
+			} else {
+				oddNumber++;
+			}
+		}
+		document.write(`Випадкові парні числа: ${evenNumber}.
+		<br>
+		Випадкові непарні числа: ${oddNumber}.`);
+	</script>
+</body>
+
+</html>
