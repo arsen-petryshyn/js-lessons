@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Задача 3</title>
+</head>
+
+<body>
+	<h1>Задача 3</h1>
+	<p>Розробити клас MultChecker для перевірки таблиці множення <br>
+		1) Поля: <br>
+		- Число, яке перевіряємо (наприклад, перевірка частини таблиці множення на 7) <br>
+		- Кількість правильних відповідей <br>
+		- Кількість неправильних відповідей <br>
+		2) Методи: <br>
+		- Генерування прикладу (метод випадковим чином визначає друге число, перше число фіксоване) <br>
+		- Перевірка правильності вказаної відповіді <br>
+		- render</p>
+	<script>
+		class MultChecker {
+			constructor(checkingNum) {
+				this.checkingNum = checkingNum;
+				this.countCorrectAnswers = 0;
+				this.countIncorrectAnswers = 0;
+				this.generatedRandomNumber = 0;
+			}
+
+			generationRandomNumber() {
+				this.generatedRandomNumber = Math.floor(Math.random() * 10) + 1;
+			}
+
+			generationExample(userAnsver) {
+				if (userAnsver === this.checkingNum * this.generatedRandomNumber) {
+					alert('Правильна відповідь')
+					this.countCorrectAnswers++
+				} else {
+					alert('Неправильна відповідь')
+					this.countIncorrectAnswers++
+				}
+			}
+			render() {
+				document.write(`${this.countCorrectAnswers}`)
+				document.write(`${this.countIncorrectAnswers}`)
+			}
+
+			toString() {
+				return `Кількість правильних відповідей: ${this.countCorrectAnswers} <br> Кількість неправильних відповідей: ${this.countIncorrectAnswers} <br>`
+			}
+		}
+
+		let startCheck = new MultChecker(6)
+		startCheck.generationRandomNumber()
+
+		do {
+			startCheck.generationRandomNumber()
+			let userAnsver = parseInt(prompt(`Вкажіть відповідь ${startCheck.checkingNum} * ${startCheck.generatedRandomNumber}`))
+		} while (confirm('Бажаєте продовжити?') === true);
+		document.write(startCheck.toString())
+		console.log(startCheck.toString())
+
+	</script>
+
+</body>
+
+</html>

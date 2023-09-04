@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Завдання 1</title>
+</head>
+
+<body>
+	<h1>Завдання 3
+	</h1>
+	<p>Дано масив імен учнів. З’ясувати скільки разів зустрічається ім’я «Іван».
+	</p>
+	<script>
+		//Введення кількосьі учнів
+		let inputNamesCount = parseInt(prompt("Введіть кількість учнів"))
+		//функція введення імен
+		let getNames = function (inputNamesCount) {
+			let names = [];
+			for (let i = 0; i < inputNamesCount; i++) {
+				let inputName = prompt("Введіть імʼя учня");
+				names.push(inputName);
+			}
+			return names;
+		}
+		// Виклик функції введення імен
+		let namesArray = getNames(inputNamesCount);
+		document.write(`Список учнів: ${namesArray}<br>`);
+
+		//Функція підрахунку імен Івани
+		let getNameCount = function (namesArray) {
+			let countIvan = 0;
+			for (let i = 0; i < namesArray.length; i++) {
+				if (namesArray[i] === "Іван" || namesArray[i] === "іван" || namesArray[i] === "ІВАН") {
+					countIvan++;
+				}
+			}
+			return countIvan;
+		}
+
+		let countIvan = getNameCount(namesArray);
+		document.write(`Ви вказали імʼя Іван ${countIvan} разів<br>`);
+
+	</script>
+</body>
+
+</html>

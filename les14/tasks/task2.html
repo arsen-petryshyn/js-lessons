@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Задача 1</title>
+</head>
+
+<body <h1>Задача 2
+	</h1>
+	<p>Розробити функцію, у яку передають об’єкт (день, місяць, рік). Визначити, який буде рік через N місяців.
+	</p>
+	<script>
+		//ввести поточний місяць
+		const startMonth = parseInt(prompt('Вкажіть поточний місяць', 8))
+		// ввести поточнтий рік
+		const startYear = parseInt(prompt('Вкажіть поточний рік', 2023))
+		// ввести місяці який буде додано
+		const monthNumber = parseInt(prompt('Вкажіть місяці для визначення року', 12))
+		// функція для визначення року
+		function getMonth({ startMonth, startYear }, monthNumber) {
+			let monthSum = startMonth + monthNumber
+			let nextYear = startYear + monthNumber / 12
+			return Math.floor(nextYear)
+		}
+
+		// обʼєкт з датою
+		let startDate = {
+			startMonth,
+			startYear,
+		}
+		let getNextYear = getMonth(startDate, monthNumber)
+		document.write(`Через ${monthNumber} місяці  буде ${getNextYear} рік`)
+	</script>
+
+</body>
+
+</html>

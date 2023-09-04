@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Задача 1</title>
+</head>
+
+<body>
+	<h1>Задача 1
+	</h1>
+	<p>
+	</p>
+	<script>
+		// Задача 0. Реалізувати рекурсивну функцію знаходження степеня числа а
+		// ------ рекурсивна функція
+		function step(a, x) {
+			if (x === 1) return a
+			else return step(a, x - 1) * a
+		}
+		let stepA = step(4, 3)
+		document.write(`Результат: ${stepA}<br>`)
+
+	</script>
+
+</body>
+
+</html>

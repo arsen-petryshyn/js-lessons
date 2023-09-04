@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Завдання 8</title>
+</head>
+
+<body>
+	<h1>Завдання 8
+	</h1>
+	<p> Дано масив 10 номерів авто. Сформувати новий масив тих, які починаються на «А»
+
+	</p>
+	<script>
+		// Дано масив номерів авто
+		const carNumbers = ['AB1234', 'BC5678', 'AC9876', 'DE5432', 'FG8765', 'AH5678', 'IJ4321', 'AK8765', 'LM9876', 'AN1234'];
+
+		// Сформувати новий масив тих, які починаються на «А»
+		const carNumbersStartingWithA = [];
+
+		for (let i = 0; i < carNumbers.length; i++) {
+			if (carNumbers[i][0].toUpperCase() === 'A') {
+				carNumbersStartingWithA.push(` ${carNumbers[i]}`);
+			}
+		}
+
+		document.write(carNumbersStartingWithA);
+	</script>
+
+</body>
+
+</html>

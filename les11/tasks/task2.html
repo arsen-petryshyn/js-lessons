@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Завдання 1</title>
+</head>
+
+<body>
+	<h1>Завдання 2
+	</h1>
+	<p>
+	</p>
+	<script>
+		let arr = [
+			[3400, 6700, 2340, 1290, 2600, 5490, 2000,],
+			[1700, 6200, 1540, 3290, 5600, 1490, 4000,],
+			[1400, 1700, 6340, 5290, 3600, 2490, 1300,],
+			[2400, 4700, 3340, 5290, 3600, 3490, 1000,],
+		]
+		document.write(` Дано інформацію про прибуток К магазинів протягом тижня. <br>${arr[0]}<br>${arr[1]}<br>${arr[2]}<br>${arr[3]} <br> Знайти : <br><br>`)
+
+		// 1) загальний прибуток кожного масиву за тиждень;
+		function incomeShopsPerWeek(array) {
+			let shopsIncome = []
+			for (let i = 0; i < array.length; i++) {
+				let sum = 0
+				for (let j = 0; j < array[i].length; j++) {
+					sum += array[i][j]
+				}
+				shopsIncome.push(sum)
+			}
+			return shopsIncome
+		}
+		document.write(`1) загальний прибуток кожного масиву за тиждень: ${incomeShopsPerWeek(arr)} <br><br>`)
+
+		// 2) загальний прибуток усіх магазинів по дням (загальний прибуток усіх магазинів за понеділок, за вівторок, і т.д.);
+		function incomesShopsPerDays(dayNum, array) {
+			let sum = 0
+			for (let i = 0; i < array.length; i++) {
+				sum += array[i][dayNum]
+			}
+			return sum
+		}
+
+		document.write(`2) загальний прибуток усіх магазинів по дням (загальний прибуток усіх магазинів за понеділок, за вівторок, і т.д.):<br>
+		Понеділок: ${incomesShopsPerDays(0, arr)} ₴<br>
+		Вівторок: ${incomesShopsPerDays(1, arr)} ₴<br>
+		Середа: ${incomesShopsPerDays(2, arr)} ₴<br>
+		Четвер: ${incomesShopsPerDays(3, arr)} ₴<br>
+		П'ятниця: ${incomesShopsPerDays(4, arr)} ₴<br>
+		Субота: ${incomesShopsPerDays(5, arr)} ₴<br>
+		Неділя: ${incomesShopsPerDays(6, arr)} ₴<br><br>
+		`)
+
+		// 3) загальний прибуток за робочі дні
+		function workDaysTotalIncomes(array) {
+			let sum = 0
+			for (let i = 0; i < array.length; i++) {
+				for (let j = 0; j < 5; j++)
+					sum += array[i][j]
+			}
+			return sum
+		}
+		document.write(`3) загальний прибуток за робочі дні: ${workDaysTotalIncomes(arr)} ₴<br><br>`)
+
+		// 4) загальний прибуток за вихідні дні
+		function weekendDaysTotalIncomes(array) {
+			let sum = 0
+			for (let i = 0; i < array.length; i++) {
+				for (let j = 5; j < 7; j++)
+					sum += array[i][j]
+			}
+			return sum
+		}
+		document.write(`4) загальний прибуток за вихідні дні ${weekendDaysTotalIncomes(arr)} ₴<br><br>`)
+
+		// 5) максимальний прибуток за середу
+		function wednesdayMAxIncome(array) {
+			let wednesdayIncome = []
+			for (let i = 0; i < array.length; i++) {
+				wednesdayIncome.push(array[i][2])
+			}
+			return Math.max(...wednesdayIncome)
+		}
+		document.write(`5) максимальний прибуток за середу: ${wednesdayMAxIncome(arr)}₴`)
+
+	</script>
+
+</body>
+
+</html>

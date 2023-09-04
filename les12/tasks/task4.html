@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Завдання 1</title>
+</head>
+
+<body>
+	<h1>Завдання 4
+	</h1>
+	<p>Для розглянутих методів сортування спробувати вивести етапи сортування шляхом виведення відповідних таблиць за
+		зразком.
+	</p>
+	<script>
+		const arr = [3, 5, 1, 4, 2];
+		// Задача 4. Для розглянутих методів сортування спробувати вивести етапи сортування шляхом виведення відповідних таблиць за зразком.
+		let changed
+		let counter = 0
+		do {
+			changed = false
+			for (let i = 1; i < arr.length; i++) {
+				if (arr[i - 1] > arr[i]) {
+					let tmp = arr[i - 1];
+					arr[i - 1] = arr[i]
+					arr[i] = tmp
+					changed = true;
+				}
+				document.write(`[${arr}]<br>`)
+			}
+		}
+		while (changed)
+	</script>
+
+</body>
+
+</html>

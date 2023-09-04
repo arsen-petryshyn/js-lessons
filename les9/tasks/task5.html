@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Завдання 1</title>
+</head>
+
+<body>
+	<h1>Завдання 1
+	</h1>
+	<p> Дано масив елементів. Знайти добуток додатних елементів
+	</p>
+	<script>
+		const arr = new Array(-1, 232, -54, 123, -15, 233, -4, 6453);
+		let product = 1;
+
+		for (const element of arr) {
+			if (element > 0)
+				product *= element
+		}
+		document.write(`${product}`)
+
+	</script>
+
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Задача 5</title>
+</head>
+
+<body>
+	<h1>Задача 5
+	</h1>
+	<p>Тренажер додавання. Кожні 10 секунд користувачу задають випадковий приклад з додавання двох цифр і робиться
+		перевірка.
+	</p>
+	<script>
+		function sumSimulator() {
+			return setInterval(
+				() => {
+					const randomNum1 = 1 + Math.floor(Math.random() * 10)
+					const randomNum2 = 1 + Math.floor(Math.random() * 10)
+					let sum = randomNum1 + randomNum2
+					let res = parseInt(prompt(`${randomNum1}+${randomNum2} = `))
+					sum === res ? alert('Вірно') : alert(`Помилка, відповідь ${sum}`)
+				},
+				10000
+			)
+		}
+		sumSimulator()
+
+// Задача 6. Через 20 секунд перейти на сайт ukr.net. Для цього через 20 секунд після відкриття треба виконати команду
+// window.location.href = 'https://www.ukr.net/'
+
+	</script>
+
+</body>
+
+</html>

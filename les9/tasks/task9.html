@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Завдання 9</title>
+</head>
+
+<body>
+	<h1>Завдання 9
+	</h1>
+	<p> Дано масив імен ['Іван', 'Олена', 'Петро', 'Марія', 'Василь', 'Анна', 'Олександр', 'Тетяна', 'Максим', 'Юлія'].
+		Сформувати масив з перших літер цих імен.
+
+	</p>
+	<script>
+		// Дано масив імен p
+		const p = ['Іван', 'Олена', 'Петро', 'Марія', 'Василь', 'Анна', 'Олександр', 'Тетяна', 'Максим', 'Юлія'];
+
+		// Сформувати масив з перших літер цих імен
+		const firstLetters = [];
+
+		for (let i = 0; i < p.length; i++) {
+			const firstLetter = p[i][0];
+			firstLetters.push(firstLetter);
+		}
+
+		document.write(firstLetters);
+	</script>
+
+</body>
+
+</html>

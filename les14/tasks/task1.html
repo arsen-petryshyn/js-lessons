@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Задача 1</title>
+</head>
+
+<body>
+	<h1>Задача 1
+	</h1>
+	<p>
+	</p>
+	<script>
+
+		let websites = [
+			{
+				company: "ABC Web Solutions",
+				owner: "John Smith",
+				sponsors: [
+					{ lastName: "Johnson", firstName: "Michael", investment: 50000 },
+					{ lastName: "Williams", firstName: "Jessica", investment: 30000 }
+				],
+				year: 2006,
+				cost: 15000
+			},
+			{
+				company: "Tech Innovators",
+				owner: "Emily Brown",
+				sponsors: [
+					{ lastName: "Miller", firstName: "David", investment: 30000 },
+					{ lastName: "Davis", firstName: "Sophia", investment: 60000 }
+				],
+				year: 2019,
+				cost: 20000
+			},
+			{
+				company: "Digital Creations",
+				owner: "Alex Johnson",
+				sponsors: [
+					{ lastName: "Wilson", firstName: "Olivia", investment: 70000 },
+					{ lastName: "Brown", firstName: "William", investment: 45000 }
+				],
+				year: 2022,
+				cost: 18000
+			},
+			{
+				company: "Web Wizards",
+				owner: "Sarah Anderson",
+				sponsors: [
+					{ lastName: "Garcia", firstName: "Emma", investment: 55000 },
+					{ lastName: "Martinez", firstName: "Daniel", investment: 42000 }
+				],
+				year: 2021,
+				cost: 16000
+			},
+			{
+				company: "Design Masters",
+				owner: "Michael Johnson",
+				sponsors: [
+					{ lastName: "Jones", firstName: "Liam", investment: 52000 },
+					{ lastName: "Taylor", firstName: "Ava", investment: 38000 }
+				],
+				year: 2018,
+				cost: 22000
+			},
+			{
+				company: "TechSavvy Solutions",
+				owner: "Sophia Walker",
+				sponsors: [
+					{ lastName: "Hernandez", firstName: "Noah", investment: 62000 },
+					{ lastName: "Clark", firstName: "Mia", investment: 41000 }
+				],
+				year: 2004,
+				cost: 19000
+			},
+			{
+				company: "CodeCrafters",
+				owner: "Ethan Wilson",
+				sponsors: [
+					{ lastName: "Lee", firstName: "Oliver", investment: 68000 },
+					{ lastName: "Turner", firstName: "Amelia", investment: 34000 }
+				],
+				year: 2017,
+				cost: 23000
+			},
+			{
+				company: "WebMasters Inc.",
+				owner: "Emma Taylor",
+				sponsors: [
+					{ lastName: "White", firstName: "Elijah", investment: 5600 },
+					{ lastName: "Scott", firstName: "Evelyn", investment: 2900 }
+				],
+				year: 2005,
+				cost: 17500
+			},
+			{
+				company: "Pixel Perfect Designs",
+				owner: "Ryan Turner",
+				sponsors: [
+					{ lastName: "Gonzalez", firstName: "Ella", investment: 78000 },
+					{ lastName: "Perez", firstName: "Liam", investment: 32000 }
+				],
+				year: 2023,
+				cost: 16500
+			},
+			{
+				company: "Creative Coders",
+				owner: "Sophie Williams",
+				sponsors: [
+					{ lastName: "Wang", firstName: "Lucas", investment: 55000 },
+					{ lastName: "Lewis", firstName: "Olivia", investment: 39000 }
+				],
+				year: 2014,
+				cost: 2400
+			},
+			{
+				company: "Innovative Solutions",
+				owner: "Benjamin Lee",
+				sponsors: [
+					{ lastName: "Hall", firstName: "Aiden", investment: 51000 },
+					{ lastName: "Adams", firstName: "Charlotte", investment: 36000 }
+				],
+				year: 2025,
+				cost: 1500
+			}
+		];
+
+		// 		Знайти:
+		// 		1) загальну вартість усіх сайтів
+		let totalCostOfwebsites = 0
+		for (let i = 0; i < websites.length; i++) {
+			totalCostOfwebsites += websites[i].cost;
+		}
+		document.write(`Загальна вартість усіх сайтів: ${totalCostOfwebsites} <br>`)
+
+		// 		2) кількість сайтів, що було зроблено між 2000 та 2009 рр.
+		let madeBetween2000and2009 = 0
+		for (let i = 0; i < websites.length; i++) {
+			if (websites[i].year > 2000 && websites[i].year < 2009) {
+				++madeBetween2000and2009
+			};
+		}
+		document.write(`Кількість сайтів, що було зроблено між 2000 та 2009 р: ${madeBetween2000and2009}<br>`)
+
+
+		// 		3) кількість сайтів, де сума спонсорських вкладень була більшою за 100000
+		let sumOfSponsorsInvestment = 0
+		for (let i = 0; i < websites.length; i++) {
+			if (websites[i].sponsors[0].investment + websites[i].sponsors[1].investment > 100000) {
+				++sumOfSponsorsInvestment
+			};
+		}
+		document.write(`Кількість сайтів, де сума спонсорських вкладень була більшою за 100000: ${sumOfSponsorsInvestment}<br>`)
+
+		// 		4) створити загальний список усіх спонсорів(поки можуть повторюватись, просто зібрати усі у масив)
+		let arrInvestment = []
+		for (let i = 0; i < websites.length; i++) {
+			arrInvestment.push(websites[i].sponsors[0].firstName + ' ' + websites[i].sponsors[0].lastName)
+			arrInvestment.push(websites[i].sponsors[1].firstName + ' ' + websites[i].sponsors[1].lastName)
+		}
+		document.write(`Загальний список усіх спонсорів: ${arrInvestment}<br>`)
+
+		// 		5) знайти рік, коли прибуток був найбільшим
+		const maxProfitYear = websites.reduce((maxYear, site) => {
+			return site.cost > websites[maxYear].cost ? websites.indexOf(site) : maxYear;
+		}, 0);
+		document.write(`Знайти рік, коли прибуток був найбільшим: ${websites[maxProfitYear].year}<br>`)
+
+		// 		6) упорядкувати список за спаданням прибутку
+		websites.sort((a, b) => b.cost - a.cost);
+		document.write(`Упорядкований список за спаданням прибутку:`)
+		websites.forEach(site => {
+			document.write(` ${site.company},`);
+		});
+
+		// 		7) Створити 2 окремих списки з копіями об’єктів, що містять сайти з вартість до 10000 і більше 10000
+		let websitesLess10000 = websites.filter((site) => site.cost <= 10000);
+		let websitesMore10000 = websites.filter((site) => site.cost > 10000);
+		// document.write(` ${websitesMore10000},`);
+		console.log('Сайти з вартістю до 10000:', websitesLess10000);
+		console.log('Сайти з вартістю від 10000:', websitesMore10000);
+	</script>
+
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Завдання 1</title>
+</head>
+
+<body>
+	<h1>Завдання 1
+	</h1>
+	<p>Дано масив, який містить оцінки з К предметів. Знайти середній бал і з’ясувати до якої категорії він відноситься
+		(відмінник, двійочник (має хоча би одну двійку), хорошист (оцінки добре і відмінно), трійочник(є
+		хоча би одна трійка)).
+
+	</p>
+	<script>
+		//1)Вказуємо кількість пердметів
+		let numOfGrades = parseInt(prompt("Вкажіть кількість предметів для оцінювання"))
+		//2)Вводимо елементи масиву
+		//функцыя отримання даних масиву
+		function inputRating(numOfGrades) {
+			let rating = [] //Массив
+			for (let i = 0; i < numOfGrades; i++) { //Цикил для введення даних
+				let ratingNum = parseFloat(prompt(`Вкажіть оцінку від 1 до 5 для предмета номер ${i + 1}`)) //Введення даних
+				rating.push(ratingNum)//Занесення даних в масив
+			}
+			return rating
+		}
+		//Виведення даних
+		let countRating = inputRating(numOfGrades)
+		document.write(`Оцінки з предметів: ${countRating}<br>`)
+
+		//3)Знаходимо середню оцінку
+		//функцыя отримання середнього балу
+		function getAverage(countRating) {
+			let sumRating = 0 //середній бал
+			let count = 0 //лічильник балів
+			for (let i = 0; i < countRating.length; i++) { //Цикил
+				sumRating += countRating[i]
+				count++
+			}
+			return sumRating / count
+		}
+		//Виведення середньої оцінки
+		let average = getAverage(countRating)
+		document.write(`Середня оцінка: ${average}<br>`)
+
+		//4)Знаходимо категорію
+		//Функція визначення категорії
+		function getCategory(countRating) {
+			for (let i = 0; i < countRating.length; i++) {
+
+				if (countRating[i] === 5) {
+					return "Відмінник"
+				} else if (countRating[i] >= 4) {
+					return "Хорошист"
+				} else if (countRating[i] >= 3) {
+					return "Трійочник"
+				} else if (countRating[i] >= 1) {
+					return "Двійочник"
+				}
+			}
+		}
+		//Виведення категорії студента
+
+		let category = getCategory(countRating)
+		document.write(`Схоже що ви: ${category}<br>`)
+	</script>
+
+</body>
+
+</html>

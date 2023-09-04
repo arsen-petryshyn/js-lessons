@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Завдання 1</title>
+</head>
+
+<body>
+	<h1>Завдання 1
+	</h1>
+	<p>Знайти суми елементів у вказаній області
+	</p>
+	<script>
+		let arrNumbers = [
+			[32, 34, 5, 23],
+			[89, 34, 1, 45],
+			[92, 83, 47, 6],
+			[19, 8, 62, 45],
+		]
+		// Створюємо функцію для знаходження суми елементів у вказаній області 
+		function getSum(rowStart, rowEnd, columnStart, columnEnd, arrNumbers) {
+			let sum = 0
+			for (let row = rowStart; row < rowEnd; row++) {
+				for (let column = columnStart; column < columnEnd; column++) {
+					sum += arrNumbers[row][column]
+				}
+			}
+			return sum
+		}
+		//----------------------------------------------------
+		document.write(`
+		1) ${getSum(0, 2, 0, 2, arrNumbers)}<br>
+		2) ${getSum(0, 2, 2, 4, arrNumbers)}<br>
+		3) ${getSum(2, 4, 0, 2, arrNumbers)}<br>
+		4) ${getSum(2, 4, 2, 4, arrNumbers)}<br>
+		`)
+		// 5) сума парних рядків-------------------------------
+		function sumEvenRows(array) {
+			let sum = 0
+			for (let row = 1; row < array.length; row += 2) {
+				for (let column = 0; column < array.length; column++) {
+					sum += array[row][column]
+				}
+			}
+			return sum
+		}
+		document.write(`5) Сума парних рядків ${sumEvenRows(arrNumbers)}<br>`)
+		// 6) Суму непарних стовпців ----------------------------
+		function sumOddRows(array) {
+			let sum = 0
+			for (let row = 0; row < array.length; row++) {
+				for (let column = 0; column < array.length; column += 2) {
+					sum += array[row][column]
+				}
+			}
+			return sum
+		}
+		document.write(`6) Сума непарних стовпців ${sumOddRows(arrNumbers)}<br>`)
+
+	</script>
+
+</body>
+
+</html>

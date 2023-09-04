@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Завдання 7</title>
+</head>
+
+<body>
+	<h1>Завдання 7
+	</h1>
+	<p> Дано масив цін (500, 1200, 300, 2300, 2000, 900). Змінити цей масив так, що на ціни товарів, які більші за 1000
+		грн. дати 30% знижки
+	</p>
+	<script>
+		let price = [500, 1200, 300, 2300, 2000, 900]
+		for (let i = 0; i < price.length; i++) {
+			if (price[i] > 1000) price[i] *= 0.7;
+		}
+		document.write(price)
+	</script>
+
+</body>
+
+</html>

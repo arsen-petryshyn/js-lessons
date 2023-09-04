@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Задача 2</title>
+</head>
+
+<body>
+	<h1>Задача 2
+	</h1>
+	<p>Задача 2. Реалізувати бінарний пошук (розглядали на попередніх уроках) з використанням рекурсивного алгоритму.
+	</p>
+	<script>
+		// 
+		const arr = [1, 5, 8, 11, 21, 36, 43, 50, 55, 62, 74, 83, 89]
+		function binarySearchRecursion(arr, num, start, end) {
+			let middle = Math.floor((start + end) / 2)
+			if (arr[middle] === num) return middle
+			if (arr[middle] < num) return binarySearchRecursion(arr, num, middle + 1, end)
+			if (arr[middle] > num) return binarySearchRecursion(arr, num, start, middle - 1)
+		}
+		let res = binarySearchRecursion(arr, 21, 0, arr.length - 1)
+		document.write(res)
+	</script>
+
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Задача 0</title>
+</head>
+
+<body>
+	<h1>Задача 0</h1>
+	<p> Дано два об’єкта. Обидва містять масив цілих чисел. При цьому у одному з них є функція знаходження суми, а у
+		іншому – функція для знаходження добутку тих, які знаходяться між заданими мінімальним і максимальних значенням.
+		Використати обидва методи стосовно обидвох об’єктів (використати call, apply)</p>
+
+	<script>
+		//знаходження суми 
+		let object1 = {
+			arrNum: [33, 44, 99, 66, 11, 77, 55],
+			getSumArrNum: function () {
+				return this.arrNum.reduce((prevSum, number) => prevSum + number, 0)
+			},
+		}
+		//знаходження добутку 
+		let object2 = {
+			arrNum: [33, 14, 49, 36, 11, 37, 65],
+			getProductArrNum: function (min, max) {
+				return this.arrNum.reduce((prevProd, number) => {
+					if (number >= min && number <= max) {
+						return prevProd * number
+					} else {
+						return prevProd
+					}
+				}, 1)
+			}
+		}
+		const totalSum1 = object1.getSumArrNum()
+		const totalSum2 = object1.getSumArrNum.call(object2)
+
+		const product1 = object2.getProductArrNum.apply(object1, [20, 60])
+		const product2 = object2.getProductArrNum(15, 50)
+
+		document.write(`Загальна сума чисел object1 : ${totalSum1}<br>`)
+		document.write(`Загальна сума чисел  object2: ${totalSum2}<br>`)
+		document.write(`Загальна сума добутку чисел object1: ${product1}<br>`)
+		document.write(`Загальна сума добутку чисел object2: ${product2}<br>`)
+
+	</script>
+
+</body>
+
+</html>

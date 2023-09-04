@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Задача 5</title>
+</head>
+
+<body>
+	<div>
+		<h1>Задача 5</h1>
+		<p>Розробити клас «Керівник танців»
+			<br>
+			1) Поля: <br>
+			- Масив імен хлопців<br>
+			- Масив імен дівчат<br>
+			2) Методи: <br>
+			- Метод випадкового вибору імені хлопця<br>
+			- Метод випадкового вибору імені дівчини<br>
+			- Метод виведення пари для танців<br>
+			- Метод run , який ініціює через кожні 5 секунд виведення нової пари для танців<br>
+			<br><br>
+			Приготуватись починаємо через 5 секунд!
+		</p>
+		<div id="output"></div>
+	</div>
+	<script>
+		class DanceManager {
+			constructor() {
+				this.boysNames = ['Іван', 'Адам', 'Назар', 'Діма', 'Максим'];
+				this.girlsNames = ['Ніна', 'Соня', 'Аліна', 'Дара', 'Віка'];
+			}
+
+			getRandomBoysNames() {
+				const randomIndex = Math.floor(Math.random() * this.boysNames.length);
+				return this.boysNames[randomIndex];
+			}
+			getRandomGirlsNames() {
+				const randomIndex = Math.floor(Math.random() * this.girlsNames.length);
+				return this.girlsNames[randomIndex];
+			}
+			showPair() {
+				const outputDiv = document.getElementById("output");
+				outputDiv.innerHTML += `Зараз танцюватиме: ${this.getRandomBoysNames()} та ${this.getRandomGirlsNames()}<br>`;
+				// document.write(`Зараз танцюватиме: ${this.getRandomBoysNames()} та ${this.getRandomGirlsNames()}<br>`);
+			}
+			run() {
+				setInterval(() => {
+					this.showPair();
+				}, 5000);
+			}
+		}
+
+		const danceManager = new DanceManager();
+		danceManager.run();
+
+	</script>
+
+</body>
+
+</html>

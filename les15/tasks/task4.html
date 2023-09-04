@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Задача 4</title>
+</head>
+
+<body>
+	<h1>Задача 4</h1>
+	<p>Розробити клас Baner <br>
+		1) Поля: <br>
+		- Масив об’єктів ( графічних зображень та посилань на сайти)<br>
+		2) Методи: <br>
+		- Метод випадкового вибору об’єкта (графічного зображення та посилання)<br>
+		- Метод виведення випадкового банера<br>
+	</p>
+	<script>
+		class Baner {
+			constructor() {
+				this.catData = [
+					{
+						photo: 'img/cat1.jpg',
+						link: 'httpshttps://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1443&q=80://www.example.com/cat1',
+					},
+					{
+						photo: 'img/cat2.jpg',
+						link: 'https://images.unsplash.com/photo-1495360010541-f48722b34f7d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1336&q=80',
+					},
+					{
+						photo: 'img/cat3.jpg',
+						link: 'https://images.unsplash.com/photo-1573865526739-10659fec78a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1315&q=80',
+					},
+					{
+						photo: 'img/cat4.jpg',
+						link: 'https://images.unsplash.com/photo-1533738363-b7f9aef128ce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1335&q=80',
+					},
+					{
+						photo: 'img/cat5.jpg',
+						link: 'https://images.unsplash.com/photo-1618826411640-d6df44dd3f7a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1287&q=80',
+					},
+				];
+			}
+			//Метод випадкового вибору об’єкта (графічного зображення та посилання)
+			getRandomCat() {
+				const randomIndex = Math.floor(Math.random() * this.catData.length);
+				return this.catData[randomIndex];
+			}
+			//Метод виведення випадкового банера
+			displayRandomBanner() {
+				const randomCat = this.getRandomCat();
+
+				const bannerHTML = `
+				<a href="${randomCat.link}" target="_blank">
+				<img src="${randomCat.photo}" alt="Котик">
+				</a>`;
+
+				document.body.insertAdjacentHTML('beforeend', bannerHTML);
+			}
+
+		}
+		const banner = new Baner();
+		banner.displayRandomBanner();
+
+	</script>
+
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Завдання 1</title>
+</head>
+
+<body>
+	<h1>Завдання 5
+	</h1>
+	<p>Дано послідовність оцінок учня. Підрахувати кількість:<br>
+		1) двійок <br>
+		2) кількість хороших оцінок (добре, відмінно);<br>
+		3) кількість оцінок, які нижче середнього.<br>
+	</p>
+	<script>
+		//1)Вказуємо кількість оцінок
+		let numOfGrades = parseInt(prompt("Вкажіть кількість предметів для оцінювання"))
+		//2)Вводимо елементи масиву
+		//функцыя отримання даних масиву
+		function inputRating(numOfGrades) {
+			let rating = [] //Массив
+			for (let i = 0; i < numOfGrades; i++) { //Цикил для введення даних
+				let ratingNum = parseFloat(prompt(`Вкажіть оцінку від 1 до 5 для предмета ${i + 1}`)) //Введення даних
+				rating.push(ratingNum)//Занесення даних в масив
+			}
+			return rating
+		}
+		//========Виведення даних
+		let countRating = inputRating(numOfGrades)
+		document.write(`Оцінки з предметів: ${countRating}<br>`)
+
+		//функція підрахування двійок
+		function getCount2(countRating) {
+			let count = 0 //лічильник балів
+			for (let i = 0; i < countRating.length; i++) { //Цикил
+				if (countRating[i] === 2) {
+					count++
+				}
+			}
+			return count
+		}
+		//========Виведення двійок
+		let CountFor2 = getCount2(countRating)
+		document.write(`Двійок в учня: ${CountFor2}  <br>`)
+
+		//функція підрахування хороших оцінок (добре, відмінно)
+		function getCount4_5(countRating) {
+			let count = 0 //лічильник балів
+			for (let i = 0; i < countRating.length; i++) { //Цикил
+				if (countRating[i] >= 4) {
+					count++
+				}
+			}
+			return count
+		}
+		//Виведення оцінок добре та відмінно
+		let CountFor4_5 = getCount4_5(countRating)
+		document.write(` Оцінок добре та відмінно в учня: ${CountFor4_5}  <br>`)
+
+		//функція підрахування кількість оцінок, які нижче середнього.
+		function getCount3(countRating) {
+			let count = 0 //лічильник балів
+			for (let i = 0; i < countRating.length; i++) { //Цикил
+				if (countRating[i] <= 3) {
+					count++
+				}
+			}
+			return count
+		}
+		//Виведення оцінок які нижче середнього.
+		let CountFor3 = getCount3(countRating)
+		document.write(` Оцінок які нижче середнього в учня: ${CountFor3}  <br>`)
+	</script>
+
+</body>
+
+</html>

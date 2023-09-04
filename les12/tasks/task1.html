@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Завдання 1</title>
+</head>
+
+<body>
+	<h1>Завдання 1
+	</h1>
+	<p>Дано масив 30 випадкових цілих чисел. Підрахувати скільки було обмінів під час сортування бульбашкою
+	</p>
+	<script>
+		const arr = [];
+		for (let i = 0; i < 30; i++) {
+			const randomNumber = Math.floor(Math.random() * 1000 + 1);
+			arr.push(randomNumber);
+		}
+		document.write(`Масив: ${arr}`)
+
+		// Задача 1. Підрахувати скільки було обмінів під час сортування бульбашкою
+		let changed
+		let counter = 0
+		do {
+			changed = false
+			for (let i = 1; i < arr.length; i++) {
+
+				if (arr[i - 1] > arr[i]) {
+					let tmp = arr[i - 1];
+					arr[i - 1] = arr[i]
+					arr[i] = tmp
+					changed = true;
+				}
+				counter++
+			}
+		}
+		while (changed)
+		document.write(`<br>Відсортований масив: ${arr}`)
+		document.write(`<br>Обмінів під час сортування бульбашкою: ${counter}`)
+
+
+	</script>
+
+</body>
+
+</html>
