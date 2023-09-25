@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Задача 4</title>
+</head>
+
+<body>
+	<h1>Задача 4</h1>
+	<p>Особиста бібліотека. Картотека домашньої бібліотеки: дані книги (автори (піб, рік народження, короткий
+		опис),назва книги, жанр, видавництво (назва, реєстраційний номер, рік засування)). Реалізувати розділи
+		бібліотеки організувати додавання/вилучення книг та вибір книг за назвою, за ПІБ автора, за видавництвом.</p>
+	<br>
+	<script>
+		class Book {
+			constructor(author, title, genre, publisher) {
+				this.author = author;
+				this.title = title;
+				this.genre = genre;
+				this.publisher = publisher;
+			}
+			toString() {
+				return `Автор книги: ${this.author.name};<br>
+				Назва: ${this.title};<br>
+				Жанр: ${this.genre};<br>
+				Видавництво: ${this.publisher.name};<br><br>`
+			}
+		}
+
+		// Структура даних для автора
+		class Author {
+			constructor(name, birthYear, description) {
+				this.name = name;
+				this.birthYear = birthYear;
+				this.description = description;
+			}
+		}
+
+		// Структура даних для видавництва
+		class Publisher {
+			constructor(name, registrationNumber, yearEstablished) {
+				this.name = name;
+				this.registrationNumber = registrationNumber;
+				this.yearEstablished = yearEstablished;
+			}
+		}
+
+		// Основний об'єкт для бібліотеки
+		class Library {
+			constructor() {
+				this.books = [];
+			}
+
+			// Додавання книги до бібліотеки
+			addBook(author, title, genre, publisher) {
+				const book = new Book(author, title, genre, publisher);
+				this.books.push(book);
+
+			}
+
+			// Вилучення книги з бібліотеки за назвою
+			removeBookByTitle(title) {
+				this.books = this.books.filter((book) => book.title !== title);
+			}
+
+			// Пошук книг за назвою
+			findBooksByTitle(title) {
+				return this.books.filter((book) => book.title === title);
+			}
+
+			// Пошук книг за ПІБ автора
+			findBooksByAuthor(authorName) {
+				return this.books.filter((book) => book.author.name === authorName);
+			}
+
+			// Пошук книг за видавництвом
+			findBooksByPublisher(publisherName) {
+				return this.books.filter((book) => book.publisher.name === publisherName);
+			}
+			toString() {
+				return this.books.map(book => book.toString());
+			}
+
+		}
+
+		// Приклад використання
+		const myLibrary = new Library();
+
+		const author1 = new Author('Автор 1', 1980, 'Опис автора 1');
+		const author2 = new Author('Автор 2', 1990, 'Опис автора 2');
+		const author3 = new Author('Автор 3', 1970, 'Опис автора 3');
+		const author4 = new Author('Автор 4', 1960, 'Опис автора 4');
+
+		const publisher1 = new Publisher('Видавництво 1', '12345', 2001);
+		const publisher2 = new Publisher('Видавництво 2', '23456', 2002);
+		const publisher3 = new Publisher('Видавництво 3', '34567', 2003);
+		const publisher4 = new Publisher('Видавництво 4', '45678', 2004);
+
+
+		myLibrary.addBook(author1, 'Книга 1', 'Жанр 1', publisher1);
+		myLibrary.addBook(author2, 'Книга 2', 'Жанр 2', publisher2);
+		myLibrary.addBook(author3, 'Книга 3', 'Жанр 3', publisher3);
+		myLibrary.addBook(author4, 'Книга 4', 'Жанр 4', publisher4);
+
+		document.write(`<strong>Зайти книгу автора 3:</strong><br> ${myLibrary.findBooksByAuthor('Автор 3')}`);
+		document.write(`<strong>Зайти книгу 2:</strong><br> ${myLibrary.findBooksByTitle('Книга 2')}`);
+		document.write(`<strong>Зайти книгу Видавництва 4:</strong><br> ${myLibrary.findBooksByPublisher('Видавництво 4')}`);
+		document.write(`<strong>Вилучити книгу 1:</strong><br> ${myLibrary.findBooksByTitle('Книга 1')}`);
+
+		myLibrary.removeBookByTitle('Книга 1');
+		document.write(`<strong>Зайти книгу 1:</strong><br> ${myLibrary.findBooksByTitle('Книга 1')}`);
+
+
+	</script>
+
+</body>
+
+</html>

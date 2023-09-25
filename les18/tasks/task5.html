@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Задача 5</title>
+
+</head>
+
+<div>
+	<h1>Задача 5</h1>
+	<p>
+		Користувач задає кількість рядків і стовпців. Відобразити таблицю, у клітинках якої знаходяться числа 1, 2, 3, …
+
+	</p>
+	<div class="conteiner">
+		<label for="tableRow">
+			<input type="number" name="tableRow" id="tableRow">
+		</label>
+		<label for="tableCol">
+			<input type="number" name="tableCol" id="tableCol">
+		</label>
+	</div>
+	<button class="btn">Створити</button>
+	<script>
+		//функція створення таблиці
+		function createTable() {
+			let count = 0
+			//введенt значення користувачем
+			let rowCount = document.getElementById("tableRow").value
+			let colCount = document.getElementById("tableCol").value
+
+			//таблиця
+			let table = document.createElement("table")
+			table.classList.add("table")
+			//рядки і колонки
+			for (let row = 0; row < rowCount; row++) {
+				let newRow = document.createElement("tr")
+				table.append(newRow)
+				for (let col = 0; col < colCount; col++) {
+					count++
+					let newCol = document.createElement("td")
+					newCol.innerText = `${count}`
+					newRow.append(newCol)
+				}
+			}
+			let conteiner = document.querySelector(".conteiner")
+			conteiner.prepend(table)
+		}
+
+
+		document.querySelector(".btn").onclick = () => {
+			createTable()
+		}
+
+
+	</script>
+
+	</body>
+
+</html>

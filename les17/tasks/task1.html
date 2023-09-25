@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Задача 1</title>
+</head>
+
+<body>
+	<h1>Задача 1</h1>
+	<p> Створити клас, що дозволяє виконувати такі операції над масивами: знаходження кількості додатних, кількості
+		від’ємних, кількість входжень деякого числа (статичні методи)</p>
+	<br>
+	<script>
+		class Operations {
+			static countPositiveNumbers(arr) {
+				return arr.filter(num => num > 0).length;
+			}
+			static countNegativeNumbers(arr) {
+				return arr.filter(num => num < 0).length;
+			}
+			static countOccurrences(arr, targetNumber) {
+				return arr.filter(num => num === targetNumber).length;
+			}
+		}
+
+		// Приклад використання класу:
+		const numbers = [1, -2, 3, 4, -5, 3, 1];
+
+		const positiveCount = Operations.countPositiveNumbers(numbers)
+		const negativeCount = Operations.countNegativeNumbers(numbers)
+		const targetNumberCount = Operations.countOccurrences(numbers, 3)
+
+		document.write(`Масив чисел: [${numbers}]<br>`)
+		document.write(`Кількість додатніх чисел: ${positiveCount}<br>`)
+		document.write(`Кількість відємних чисел: ${negativeCount}<br>`)
+		document.write(`Кількість входжень числа 3: ${targetNumberCount}<br>`)
+	</script>
+
+</body>
+
+</html>

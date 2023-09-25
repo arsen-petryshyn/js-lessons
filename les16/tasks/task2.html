@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Задача 2</title>
+	</head>
+
+	<body>
+		<h1>Задача 2</h1>
+		<p>
+			Створити клас TMoney для роботи з грошовими сумами. Сума повинна зберігатися у вигляді доларового еквіваленту. Реалізувати методи додавання/вилучення грошової маси, вказуючи необхідну суму у гривнях, та визначення курсу долара, при якому сума у гривнях збільшиться на 100. Курс долара зберігати в окремому полі.
+
+			<script>
+				//Клас TMoney для роботи з грошовими сумами.
+				class TMoney {
+					constructor(initialAmountInUSD, exchange) {
+						this.amountInUSD = initialAmountInUSD;
+						this.exchange = exchange;
+					}
+					// Метод для додавання грошей в гривнях
+					addAmountInUAH(userUAH) {
+						const amountInUSDToAdd = userUAH / this.exchange;
+						this.amountInUSD += amountInUSDToAdd;
+					}
+					// Метод для вилучення грошей в гривнях
+					withdrawAmountInUAH(userUAH) {
+						const amountInUSDToWithdraw = userUAH / this.exchange;
+						if (this.amountInUSD >= amountInUSDToWithdraw) {
+							this.amountInUSD -= amountInUSDToWithdraw;
+						} else {
+							alert("Не достатній залишок на рахунку");
+						}
+					}
+					// Метод для визначення курсу долара, при якому сума збільшиться на 100 гривень
+					uah100Exchange() {
+						const uah100ExchangeRate = this.exchange + (this.amountInUSD + 100) / this.amountInUSD;
+						return uah100ExchangeRate;
+					}
+					// Метод для виведення інформації про стан рахунку
+					displayAcc() {
+						document.write("<br><br>");
+						document.write(`Залишок на рахунку: ${this.amountInUSD.toFixed(2)}$ (${(this.amountInUSD * this.exchange).toFixed(2)}грн) <br>`);
+						document.write(`Поточний курс долара: 1 USD = ${this.exchange} грн <br>`);
+						document.write("<br>");
+						document.write("Ваші заощадження зростуть на 100грн. при зростанні курсe до: ", this.uah100Exchange().toFixed(2));
+					}
+				}
+
+				//Курс долара та стан рахунку
+				const initialAmountInUSD = 1000;
+				const exchange = 29;
+				const userAddsInUAH = parseInt(prompt(`Яку суму бажаєте покласти на рахунок в гривні?`));
+				const userWithdraw = parseInt(prompt(`Яку суму бажаєте зняти з рахунку в гривні?`));
+
+				const moneyAcc = new TMoney(initialAmountInUSD, exchange);
+				moneyAcc.addAmountInUAH(userAddsInUAH);
+				moneyAcc.withdrawAmountInUAH(userWithdraw);
+				moneyAcc.displayAcc();
+			</script>
+		</p>
+	</body>
+</html>

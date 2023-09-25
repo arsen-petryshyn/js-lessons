@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Задача 7</title>
+
+</head>
+
+<body>
+	<script>
+		function getTripSum() {
+			let transportPrice = document.querySelectorAll('.transport')
+			let mealsPrice = document.querySelectorAll('.checkbox')
+			let guidePrice = document.querySelectorAll('.guide')
+			let sum = 0
+
+			for (const item of transportPrice) {
+				sum += parseFloat(item.value)
+			}
+			for (const inp of mealsPrice) {
+				if (inp.checked) sum += parseFloat(inp.value)
+			}
+			for (const inp of guidePrice) {
+				if (inp.checked) sum += parseFloat(inp.value)
+			}
+			const totalCost = document.querySelector('#totalCost')
+			totalCost.innerHTML = `Загальна вартість ${sum}`
+		}
+
+		window.onload = function () {
+			document.querySelector('button').onclick = getTripSum
+		}
+
+	</script>
+	<h1>Задача 7
+	</h1>
+	<p>Подорож складається з 3 етапів. На кожному етапі користувач може вибрати один з видів транспорту (авто,
+		автобус,літак - випадаючий список), харчування (сніданок, обід, вечеря – checkbоx) та одного з 3-х
+		гідів(використати - radio buttons). Ціни визначте самі. Підрахувати загальну вартість.
+	</p>
+
+	<h3>Етап 1</h3>
+	<div>
+		<label for="transport">Оберіть транспорт: </label>
+		<select id="transport" class="transport">
+			<option value="400">Авто</option>
+			<option value="100">Автобус</option>
+			<option value="500">Літак</option>
+			<!-- Додайте інші варіанти, які вам потрібні -->
+		</select><br>
+
+		<label>Оберіть харчування: </label>
+		<input type="checkbox" value="30" class="checkbox">Cніданок
+		<input type="checkbox" value="40" class="checkbox">Обід
+		<input type="checkbox" value="50" class="checkbox">Вечеря
+		<br>
+
+		<label>Оберіть гида: </label>
+		<input type="radio" name="guide" value="110" class="guide">Гид 1
+		<input type="radio" name="guide" value="200" class="guide">Гид 2
+		<input type="radio" name="guide" value="160" class="guide">Гид 3
+		<br>
+	</div>
+
+
+	<h3>Етап 2</h3>
+	<div>
+		<label for="transport2">Оберіть транспорт: </label>
+		<select id="transport2" class="transport">
+			<option value="400">Авто</option>
+			<option value="100">Автобус</option>
+			<option value="500">Літак</option>
+			<!-- Додайте інші варіанти, які вам потрібні -->
+		</select><br>
+
+		<label>Оберіть харчування: </label>
+		<input type="checkbox" value="30" class="checkbox">Cніданок
+		<input type="checkbox" value="40" class="checkbox">Обід
+		<input type="checkbox" value="50" class="checkbox">Вечеря
+		<br>
+
+		<label>Оберіть гида: </label>
+		<input type="radio" name="guide2" value="110" class="guide">Гид 1
+		<input type="radio" name="guide2" value="200" class="guide">Гид 2
+		<input type="radio" name="guide2" value="160" class="guide">Гид 3
+		<br>
+	</div>
+	<h3>Етап 3</h3>
+	<div>
+		<label for="transport3">Оберіть транспорт: </label>
+		<select id="transport3" class="transport">
+			<option value="400">Авто</option>
+			<option value="100">Автобус</option>
+			<option value="500">Літак</option>
+			<!-- Додайте інші варіанти, які вам потрібні -->
+		</select><br>
+
+		<label>Оберіть харчування: </label>
+		<input type="checkbox" value="30" class="checkbox">Cніданок
+		<input type="checkbox" value="40" class="checkbox">Обід
+		<input type="checkbox" value="50" class="checkbox">Вечеря
+		<br>
+
+		<label>Оберіть гида: </label>
+		<input type="radio" name="guide3" value="110" class="guide">Гид 1
+		<input type="radio" name="guide3" value="200" class="guide">Гид 2
+		<input type="radio" name="guide3" value="160" class="guide">Гид 3
+		<br>
+	</div>
+	<div>
+		<button>Підрахувати</button>
+	</div>
+	<div>Загальна вартість: <span id="totalCost"></span> </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Задача 6</title>
+
+</head>
+
+<div>
+	<h1>Задача 6</h1>
+	<p>
+		Користувач задає кількість оцінок і натискає на кнопку «get table». В результаті формується таблиця з input,
+		куди користувач вводить оцінки. Після цього натискає на кнопку “get sum” і знаходить середнє значення.
+	</p>
+
+	<div class="conteiner">
+		<label for="numOfGrades">Кількість оцінок</label>
+		<input type="number" id="numOfGrades" value="5">
+		<button onclick="generateTable()" class="btn">get table</button>
+	</div>
+
+	<div id="gradesTable"></div>
+
+	<button onclick="calculateAverage()">Обчислити середнє значення</button>
+	<p id="averageResult"></p>
+
+	<script>
+		function generateTable() {
+			const numOfGrades = parseInt(document.getElementById('numOfGrades').value);
+			const tableContainer = document.getElementById('gradesTable');
+			let tableHTML = '<table>';
+
+			for (let i = 1; i <= numOfGrades; i++) {
+				tableHTML += `
+			<tr>
+				<td>Оцінка ${i}:</td>
+				<td><input type="number" id="grade${i}" min="1" max="10"></td>
+			</tr>`;
+			}
+
+			tableHTML += '</table>';
+			tableContainer.innerHTML = tableHTML;
+		}
+		// document.querySelector(".btn").onclick = () => {
+		// 	generateTable()
+		// }
+		function calculateAverage(params) {
+			const numOfGrades = parseInt(document.getElementById('numOfGrades').value);
+			let sum = 0;
+
+			for (let i = 1; i <= numOfGrades; i++) {
+				const grade = parseFloat(document.getElementById(`grade${i}`).value)
+				sum += grade;
+			}
+			const average = sum / numOfGrades;
+			const averageResult = document.getElementById('averageResult');
+			averageResult.textContent = `Середнє значення: ${average.toFixed(2)}`;
+			console.log(sum)
+		}
+
+
+
+	</script>
+
+	</body>
+
+</html>

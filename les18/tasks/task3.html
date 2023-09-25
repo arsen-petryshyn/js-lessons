@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Задача 3</title>
+
+</head>
+
+<body>
+	<h1>Задача 2.</h1>
+	<p>Користувач задає рік народження. Визначити кількість років користувача.
+	</p>
+	<label>
+		Рік вашого народження
+		<input type="number" id="userYear" value="1995">
+	</label>
+	<div>
+		<button>Підрахунок</button>
+	</div>
+	<label>
+		Вік користувача
+		<input type="number" id="userBirthday" value="0">
+	</label>
+
+
+	<script>
+		function getSubtraction() {
+			const thisYear = 2023;
+			const userYear = parseInt(document.getElementById('userYear').value);
+			const userBirthday = thisYear - userYear;
+			document.getElementById('userBirthday').value = userBirthday;
+		}
+		window.onload = function () {
+			document.querySelector('button').onclick = getSubtraction
+		};
+
+	</script>
+
+</body>
+
+</html>

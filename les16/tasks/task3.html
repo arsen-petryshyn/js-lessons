@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Задача 3</title>
+</head>
+
+<body>
+	<h1>Задача 3</h1>
+	<p>
+		Об’єкт “Фірма” (використати члени-класи) Поля:<br />
+		- назва фірми;<br />
+		- дата заснування (рік, місяць);<br />
+		- послуги (назва послуги, вартість, термін виконання);<br />
+		- адреси філіалів (країна, місто, вулиця, номер будинку);<br>
+		<br>
+		Методи:<br>
+		- визначення кількості років існування фірми;<br>
+		- виведення всіх філіалів фірми у вказаному місті;<br>
+		- виведення на екран послуг, що можуть бути виконані за вказану суму грошей та вказаний термін часу;<br />
+	</p>
+	<script>
+		class Company {
+			constructor(companyName, companyFoundationYear, companyFoundationMonth) {
+				this.companyName = companyName;
+				this.companyFoundationYear = companyFoundationYear;
+				this.companyFoundationMonth = companyFoundationMonth;
+				this.companyServices = [];
+				this.companyBranches = [];
+			}
+			addService(serviceName, serviceCost, serviceDuration) {
+				let service = new Service(serviceName, serviceCost, serviceDuration);
+				this.companyServices.push(service);
+			}
+			addBranche(branchCountry, branchCity, branchStreet, branchBuildingNumber) {
+				let address = new Address(branchCountry, branchCity, branchStreet, branchBuildingNumber);
+				this.companyBranches.push(address);
+			}
+			getExistenceYears() {
+				let currentYear = new Date().getFullYear();
+				let currentMonth = new Date().getMonth() + 1;
+				let getExistenceYears = currentYear - this.companyFoundationYear;
+				if (currentMonth > this.companyFoundationMonth) {
+					getExistenceYears++;
+				}
+				return getExistenceYears;
+			}
+			getBrancheFromCity(city) {
+				return this.companyBranches.filter((branch) => branch.city === city);
+			}
+
+			getServiceSpecifiedAmount(maxCost, maxDuration) {
+				return this.companyServices.filter((service) => service.cost <= maxCost && service.duration <= maxDuration);
+			}
+
+			toString() {
+				return `Фірма <strong> ${this.companyName}</strong> була заснована ${this.companyFoundationYear} року ${this.companyFoundationMonth} місяця.<br> Роки існування: ${this.getExistenceYears()} років <br>`;
+			}
+		}
+		class Service {
+			constructor(name, cost, duration) {
+				this.name = name;
+				this.cost = cost;
+				this.duration = duration;
+			}
+			toString() {
+				return `${this.name}. Вартість: ${this.cost}$, Тривалість: ${this.duration} днів<br>`;
+			}
+		}
+		class Address {
+			constructor(country, city, street, houseNumber) {
+				this.country = country;
+				this.city = city;
+				this.street = street;
+				this.houseNumber = houseNumber;
+			}
+			toString() {
+				return `Країна: ${this.country}, Місто: ${this.city}, Адреса: ${this.street} ${this.houseNumber}<br>`;
+			}
+		}
+		function forOf(array) {
+			for (const iterator of array) {
+				document.write(iterator);
+			}
+		}
+
+		let company = new Company("Два колеса", 2018, 6);
+
+		company.addService("Заміна масла", 1000, 1);
+		company.addService("Шиномонтаж", 600, 1);
+		company.addService("Ремонт мотора", 5000, 3);
+
+		company.addBranche("Україна", "Київ", "вул. Хрещатик", 123);
+		company.addBranche("Велика Британія", "Лондон", "Baker Street", "221B");
+		company.addBranche("Сполучені Штати Америки", "Нью-Йорк", "Fifth Avenue", 456);
+
+		document.write(`${company}`);
+		document.write(`<br>`);
+
+		let branchFromCity = company.getBrancheFromCity("Київ");
+		document.write(`Філіали у місті Київ: <br>`);
+		branchFromCity.forEach((branch) => {
+			document.write(branch.toString());
+		});
+		document.write(`<br>`);
+		let serviceSpecifiedAmount = company.getServiceSpecifiedAmount(1000, 1);
+		document.write(`Послуги за вказаним бюджетом і терміном:<br>`);
+		serviceSpecifiedAmount.forEach((service) => {
+			document.write(service.toString());
+		});
+	</script>
+</body>
+
+</html>
